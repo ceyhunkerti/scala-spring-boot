@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
+<head>
+    <title>Success Page</title>
+</head>
+<body>
+<div  layout:fragment="content">
+
+    <h1 th:text="${title}">Title</h1>
+    <p class="alert alert-error">Success Page Banget</p>
+    <div th:text="${message}">Fake content</div>
+    <div>Ini Udah diganti Donk</div>
+</div>
+</body>
+</html>
