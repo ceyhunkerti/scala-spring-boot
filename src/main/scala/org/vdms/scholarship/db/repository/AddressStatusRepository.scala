@@ -12,6 +12,6 @@ import org.vdms.scholarship.db.entity.AddressStatus
  */
 
 
-trait AddressStatusRepository extends PagingAndSortingRepository[AddressStatus,String]{
+trait AddressStatusRepository extends PagingAndSortingRepository[AddressStatus, String] {
 
 }

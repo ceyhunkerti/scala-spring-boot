@@ -1,7 +1,7 @@
 package org.vdms.scholarship.db.repository
 
 import org.springframework.data.repository.PagingAndSortingRepository
-import org.vdms.scholarship.db.entity.{Student, Province}
+import org.vdms.scholarship.db.entity.Student
 
 /**
  * Created by Deny Prasetyo

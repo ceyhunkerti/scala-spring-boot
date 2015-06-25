@@ -21,14 +21,14 @@ import org.springframework.security.config.annotation.web.servlet.configuration.
   protected override def configure(http: HttpSecurity) {
     http
       .formLogin()
-        .loginPage("/login")
-        .failureUrl("/login?error")
-        .defaultSuccessUrl("/success")
+      .loginPage("/login")
+      .failureUrl("/login?error")
+      .defaultSuccessUrl("/success")
       .and()
       .logout()
       .and()
       .exceptionHandling()
-        .accessDeniedPage("/access?error")
+      .accessDeniedPage("/access?error")
       .and().authorizeRequests().antMatchers("/", "/login").permitAll()
       .anyRequest().authenticated()
   }

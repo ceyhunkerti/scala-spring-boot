@@ -1,6 +1,6 @@
 package org.vdms.scholarship.db.converter
 
-import javax.persistence.{Converter, AttributeConverter}
+import javax.persistence.{AttributeConverter, Converter}
 
 import org.vdms.scholarship.db.value.StudentStatus
 import org.vdms.scholarship.db.value.StudentStatus.StudentStatus

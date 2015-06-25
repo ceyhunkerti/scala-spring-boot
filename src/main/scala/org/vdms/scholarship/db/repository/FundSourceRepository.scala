@@ -1,7 +1,7 @@
 package org.vdms.scholarship.db.repository
 
 import org.springframework.data.repository.PagingAndSortingRepository
-import org.vdms.scholarship.db.entity.{FundSource, EducationLevel}
+import org.vdms.scholarship.db.entity.FundSource
 
 /**
  * Created by Deny Prasetyo

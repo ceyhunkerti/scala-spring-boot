@@ -1,8 +1,8 @@
 package org.vdms.scholarship.config.bootstrap
 
 import org.springframework.beans.factory.SmartInitializingSingleton
-import reactor.bus.{Event, EventBus}
 import reactor.bus.selector.Selectors.$
+import reactor.bus.{Event, EventBus}
 import reactor.fn.Consumer
 
 /**
