@@ -18,7 +18,7 @@ object SeedData {
   import org.vdms.scholarship.util.text.StringSlugUtil._
 
   val academicYearList = List(
-    AcademicYear(2015, 2016, "2015 - 2016", paymentPeriod = false, LocalDate.of(2015, Month.JULY, 1), LocalDate.of(2015, Month.DECEMBER, 31), LocalDate.of(2015, Month.JULY, 1), LocalDate.of(2015, Month.DECEMBER, 31), activePar = true)
+    AcademicYear(2015, 2016, "2015 - 2016", paymentPeriod = false, LocalDate.of(2015, Month.JULY, 1), LocalDate.of(2015, Month.DECEMBER, 31), LocalDate.of(2015, Month.JULY, 1), LocalDate.of(2015, Month.DECEMBER, 31), active = true)
   )
 
   val addressStatusList = List(
