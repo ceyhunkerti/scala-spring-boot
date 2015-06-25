@@ -1,6 +1,6 @@
 package org.vdms.scholarship.db.util
 
-import java.time.{LocalDate, Month}
+import java.time.{Year, LocalDate, Month}
 
 import org.vdms.scholarship.db.entity._
 
@@ -18,7 +18,7 @@ object SeedData {
   import org.vdms.scholarship.util.text.StringSlugUtil._
 
   val academicYearList = List(
-    AcademicYear(2015, 2016, "2015 - 2016", paymentPeriod = false, LocalDate.of(2015, Month.JULY, 1), LocalDate.of(2015, Month.DECEMBER, 31), LocalDate.of(2015, Month.JULY, 1), LocalDate.of(2015, Month.DECEMBER, 31), active = true)
+    AcademicYear(Year.of(2015), Year.of(2016), "2015 - 2016", paymentPeriod = false, LocalDate.of(2015, Month.JULY, 1), LocalDate.of(2015, Month.DECEMBER, 31), LocalDate.of(2015, Month.JULY, 1), LocalDate.of(2015, Month.DECEMBER, 31), active = true)
   )
 
   val addressStatusList = List(

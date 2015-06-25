@@ -1,6 +1,6 @@
 package org.vdms.scholarship.db.entity
 
-import java.time.LocalDate
+import java.time.{Year, LocalDate}
 import javax.persistence.{Column, Entity, GeneratedValue, Id}
 
 import scala.beans.BeanProperty
@@ -21,10 +21,10 @@ class AcademicYear {
   var id: Int = _
   @BeanProperty
   @Column(nullable = false)
-  var start: Int = _
+  var startYear: Year = _
   @BeanProperty
   @Column(nullable = false)
-  var end: Int = _
+  var endYear: Year = _
   @BeanProperty
   @Column(nullable = false)
   var remark: String = _
@@ -51,8 +51,8 @@ class AcademicYear {
 }
 
 object AcademicYear {
-  def apply(start: Int,
-            end: Int,
+  def apply(start: Year,
+            end: Year,
             remark: String,
             paymentPeriod: Boolean,
             registrationStart: LocalDate,
@@ -61,8 +61,8 @@ object AcademicYear {
             monitoringEnd: LocalDate,
             active: Boolean): AcademicYear = {
     val o = new AcademicYear()
-    o.start = start
-    o.end = end
+    o.startYear = start
+    o.endYear = end
     o.remark = remark
     o.paymentPeriod = paymentPeriod
     o.registrationStart = registrationStart
@@ -74,8 +74,8 @@ object AcademicYear {
 
   }
 
-  def unapply(o: AcademicYear): Option[(Int, Int, Int, String, Boolean, LocalDate, LocalDate, LocalDate, LocalDate, Boolean)] = {
-    Some(o.id, o.start, o.end, o.remark, o.paymentPeriod, o.registrationStart, o.registrationEnd, o.monitoringStart, o.monitoringEnd, o.active)
+  def unapply(o: AcademicYear): Option[(Int, Year, Year, String, Boolean, LocalDate, LocalDate, LocalDate, LocalDate, Boolean)] = {
+    Some(o.id, o.startYear, o.endYear, o.remark, o.paymentPeriod, o.registrationStart, o.registrationEnd, o.monitoringStart, o.monitoringEnd, o.active)
   }
 
 }

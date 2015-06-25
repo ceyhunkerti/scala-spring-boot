@@ -26,23 +26,23 @@ class IncomeRange {
   var start: Int = _
   @BeanProperty
   @Column(nullable = false)
-  var end: Int = _
+  var util: Int = _
 
 
 }
 
 
 object IncomeRange {
-  def apply(id: String, description: String, start: Int = 0, end: Int = Int.MaxValue): IncomeRange = {
+  def apply(id: String, description: String, start: Int = 0, util: Int = Int.MaxValue): IncomeRange = {
     val o = new IncomeRange()
     o.id = id
     o.description = description
     o.start = start
-    o.end = end
+    o.util = util
     o
   }
 
   def unapply(o: IncomeRange): Option[(String, String, Int, Int)] = {
-    Some(o.id, o.description, o.start, o.end)
+    Some(o.id, o.description, o.start, o.util)
   }
 }
