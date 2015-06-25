@@ -29,7 +29,7 @@ class Province(i: String, n: String) {
 
 
 object Province {
-  def apply(i: String, n: String): Province = {
+  def apply(i: String, n: String=""): Province = {
     new Province(i, n)
   }
 
