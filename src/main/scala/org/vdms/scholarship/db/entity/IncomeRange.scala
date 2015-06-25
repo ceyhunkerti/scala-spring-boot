@@ -33,7 +33,7 @@ class IncomeRange(i: String, d: String, st: Int, t: Int) {
 
 
 object IncomeRange {
-  def apply(i: String, d: String, st: Int, t: Int): IncomeRange = {
+  def apply(i: String, d: String, st: Int=0, t: Int=Int.MaxValue): IncomeRange = {
     new IncomeRange(i, d, st, t)
   }
 

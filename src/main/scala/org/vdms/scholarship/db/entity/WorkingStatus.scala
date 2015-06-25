@@ -13,7 +13,7 @@ import scala.beans.BeanProperty
  */
 
 @Entity
-class WorkingStatus(i: String, n: String) {
+class WorkingStatus(i: String, n: String, ne: String) {
 
   @Id
   @BeanProperty
@@ -21,17 +21,18 @@ class WorkingStatus(i: String, n: String) {
   @BeanProperty
   @Column(nullable = false)
   var name: String = n
-
-
+  @BeanProperty
+  @Column(nullable = false)
+  var nameEng: String = n
 }
 
 
 object WorkingStatus {
-  def apply(i: String, n: String): WorkingStatus = {
-    new WorkingStatus(i, n)
+  def apply(i: String, n: String, ne: String): WorkingStatus = {
+    new WorkingStatus(i, n, ne)
   }
 
   def unapply(o: WorkingStatus): Option[(String, String, String)] = {
-    Some(o.id, o.name)
+    Some(o.id, o.name, o.nameEng)
   }
 }
