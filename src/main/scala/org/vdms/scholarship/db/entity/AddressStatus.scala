@@ -32,8 +32,8 @@ class AddressStatus(i: String, n: String, ne: String) {
 }
 
 object AddressStatus {
-  def apply(i: String, n: String, ne: String) = {
-    new AddressStatus(i, n, ne)
+  def apply(id: String, name: String, nameEng: String) = {
+    new AddressStatus(id,name,nameEng)
   }
 
   def unapply(o: AddressStatus): Option[(String, String, String)] = {

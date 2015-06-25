@@ -148,86 +148,86 @@ class Student {
 }
 
 object Student {
-  def apply(usernamePar: String,
-            emailPar: String,
-            namePar: String,
-            genderPar: Gender,
-            birthPlacePar: String,
-            birthDatePar: LocalDate,
-            institutionPar: Institution,
-            schoolEntryYearPar: Year,
-            vdmsEntryYearPar: Year,
-            disciplinePar: Discipline,
-            studentIdNumberPar: String,
-            highSchoolProvincePar: Province,
-            facultyPar: String,
-            majorPar: String,
-            levelPar: EducationLevel,
-            cityPar: String,
-            postCodePar: String,
-            activitiesPar: String,
-            gpaPar: Double,
-            phonePar: String,
-            addressPar: String,
-            addressStatusPar: AddressStatus,
-            statusPar: StudentStatus,
-            workingStatusPar: WorkingStatus,
-            occupationPar: String,
-            incomeRangePar: IncomeRange,
-            sourceOfFundPar: FundSource,
-            parentAddressPar: String,
-            parentEducationLevelPar: EducationLevel,
-            dependentOfParentPar: Int,
-            bothParentWorkingPar: Boolean,
-            parentIncomeRangePar: IncomeRange,
-            parentOccupationPar: Occupation,
-            bankNamePar: Option[String] = None,
-            graduationTargetPar: Option[LocalDate] = None,
-            bankAccountNamePar: Option[String] = None,
-            bankAccountNumberPar: Option[String] = None,
-            toeflScorePar: Option[Int] = None,
-            alternativePhoneNumberPar: Option[String] = None): Student = {
+  def apply(username: String,
+            email: String,
+            name: String,
+            gender: Gender,
+            birthPlace: String,
+            birthDate: LocalDate,
+            institution: Institution,
+            schoolEntryYear: Year,
+            vdmsEntryYear: Year,
+            discipline: Discipline,
+            studentIdNumber: String,
+            highSchoolProvince: Province,
+            faculty: String,
+            major: String,
+            level: EducationLevel,
+            city: String,
+            postCode: String,
+            activities: String,
+            gpa: Double,
+            phone: String,
+            address: String,
+            addressStatus: AddressStatus,
+            status: StudentStatus,
+            workingStatus: WorkingStatus,
+            occupation: String,
+            incomeRange: IncomeRange,
+            sourceOfFund: FundSource,
+            parentAddress: String,
+            parentEducationLevel: EducationLevel,
+            dependentOfParent: Int,
+            bothParentWorking: Boolean,
+            parentIncomeRange: IncomeRange,
+            parentOccupation: Occupation,
+            bankName: Option[String] = None,
+            graduationTarget: Option[LocalDate] = None,
+            bankAccountName: Option[String] = None,
+            bankAccountNumber: Option[String] = None,
+            toeflScore: Option[Int] = None,
+            alternativePhoneNumber: Option[String] = None): Student = {
     val o = new Student()
 
-    o.username =  usernamePar
-    o.email =  emailPar
-    o.name =  namePar
-    o.gender =  genderPar
-    o.birthPlace =  birthPlacePar
-    o.birthDate =  birthDatePar
-    o.institution =  institutionPar
-    o.schoolEntryYear =  schoolEntryYearPar
-    o.vdmsEntryYear =  vdmsEntryYearPar
-    o.discipline =  disciplinePar
-    o.studentIdNumber =  studentIdNumberPar
-    o.highSchoolProvince =  highSchoolProvincePar
-    o.faculty =  facultyPar
-    o.major =  majorPar
-    o.level =  levelPar
-    o.city =  cityPar
-    o.postCode =  postCodePar
-    o.activities =  activitiesPar
-    o.gpa =  gpaPar
-    o.phone =  phonePar
-    o.address =  addressPar
-    o.addressStatus =  addressStatusPar
-    o.status =  statusPar
-    o.workingStatus =  workingStatusPar
-    o.occupation =  occupationPar
-    o.incomeRange =  incomeRangePar
-    o.sourceOfFund =  sourceOfFundPar
-    o.parentAddress =  parentAddressPar
-    o.parentEducationLevel =  parentEducationLevelPar
-    o.dependentOfParent =  dependentOfParentPar
-    o.bothParentWorking =  bothParentWorkingPar
-    o.parentIncomeRange =  parentIncomeRangePar
-    o.parentOccupation =  parentOccupationPar
-    o.bankName =  bankNamePar.fold("")(s=>s)
-    o.graduationTarget =  graduationTargetPar.fold(LocalDate.now())(s=>s)
-    o.bankAccountName =  bankAccountNamePar.fold("")(s=>s)
-    o.bankAccountNumber =  bankAccountNumberPar.fold("")(s=>s)
-    o.toeflScore =  toeflScorePar.fold(0)(s=>s)
-    o.alternativePhoneNumber =  alternativePhoneNumberPar.fold("")(s=>s)
+    o.username =  username
+    o.email =  email
+    o.name =  name
+    o.gender =  gender
+    o.birthPlace =  birthPlace
+    o.birthDate =  birthDate
+    o.institution =  institution
+    o.schoolEntryYear =  schoolEntryYear
+    o.vdmsEntryYear =  vdmsEntryYear
+    o.discipline =  discipline
+    o.studentIdNumber =  studentIdNumber
+    o.highSchoolProvince =  highSchoolProvince
+    o.faculty =  faculty
+    o.major =  major
+    o.level =  level
+    o.city =  city
+    o.postCode =  postCode
+    o.activities =  activities
+    o.gpa =  gpa
+    o.phone =  phone
+    o.address =  address
+    o.addressStatus =  addressStatus
+    o.status =  status
+    o.workingStatus =  workingStatus
+    o.occupation =  occupation
+    o.incomeRange =  incomeRange
+    o.sourceOfFund =  sourceOfFund
+    o.parentAddress =  parentAddress
+    o.parentEducationLevel =  parentEducationLevel
+    o.dependentOfParent =  dependentOfParent
+    o.bothParentWorking =  bothParentWorking
+    o.parentIncomeRange =  parentIncomeRange
+    o.parentOccupation =  parentOccupation
+    o.bankName =  bankName.fold("")(s=>s)
+    o.graduationTarget =  graduationTarget.fold(LocalDate.now())(s=>s)
+    o.bankAccountName =  bankAccountName.fold("")(s=>s)
+    o.bankAccountNumber =  bankAccountNumber.fold("")(s=>s)
+    o.toeflScore =  toeflScore.fold(0)(s=>s)
+    o.alternativePhoneNumber =  alternativePhoneNumber.fold("")(s=>s)
 
     o
   }

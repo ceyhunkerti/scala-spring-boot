@@ -23,7 +23,7 @@ class Institution {
   var name: String = _
   @BeanProperty
   @Column(nullable = false)
-  var nameEn: String = _
+  var nameEng: String = _
   @BeanProperty
   @JoinColumn(nullable = false)
   @ManyToOne(fetch = FetchType.EAGER)
@@ -41,19 +41,19 @@ class Institution {
 }
 
 object Institution {
-  def apply(i: String, n: String, ne: String, pro: Province, add: String, web: String, act: Boolean) = {
+  def apply(id: String, name: String, nameEng: String, province: Province, address: String, website: String, active: Boolean) = {
     val o = new Institution()
-    o.id = i
-    o.name = n
-    o.nameEn = ne
-    o.province = pro
-    o.address = add
-    o.website = web
-    o.active = act
+    o.id = id
+    o.name = name
+    o.nameEng = nameEng
+    o.province = province
+    o.address = address
+    o.website = website
+    o.active = active
     o
   }
 
   def unapply(o: Institution): Option[(String, String, String, Province, String, String, Boolean)] = {
-    Some(o.id, o.name, o.nameEn, o.province, o.address, o.website, o.active)
+    Some(o.id, o.name, o.nameEng, o.province, o.address, o.website, o.active)
   }
 }

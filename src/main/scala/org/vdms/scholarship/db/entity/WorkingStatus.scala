@@ -32,8 +32,8 @@ class WorkingStatus(i: String, n: String, ne: String) {
 
 
 object WorkingStatus {
-  def apply(i: String, n: String, ne: String): WorkingStatus = {
-    new WorkingStatus(i, n, ne)
+  def apply(id: String, name: String, nameEng: String): WorkingStatus = {
+    new WorkingStatus(id,name,nameEng)
   }
 
   def unapply(o: WorkingStatus): Option[(String, String, String)] = {

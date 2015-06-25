@@ -32,8 +32,8 @@ class Discipline(i: String, n: String, ne: String) {
 }
 
 object Discipline {
-  def apply(i: String, n: String, ne: String): Discipline = {
-    new Discipline(i, n, ne)
+  def apply(id: String, name: String, nameEng: String): Discipline = {
+    new Discipline(id,name,nameEng)
   }
 
   def unapply(o: Discipline): Option[(String, String, String)] = {

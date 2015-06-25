@@ -51,25 +51,25 @@ class AcademicYear {
 }
 
 object AcademicYear {
-  def apply(startPar: Int,
-            endPar: Int,
-            remarkPar: String,
-            paymentPeriodPar: Boolean,
-            registrationStartPar: LocalDate,
-            registrationEndPar: LocalDate,
-            monitoringStartPar: LocalDate,
-            monitoringEndPar: LocalDate,
-            activePar: Boolean): AcademicYear = {
+  def apply(start: Int,
+            end: Int,
+            remark: String,
+            paymentPeriod: Boolean,
+            registrationStart: LocalDate,
+            registrationEnd: LocalDate,
+            monitoringStart: LocalDate,
+            monitoringEnd: LocalDate,
+            active: Boolean): AcademicYear = {
     val o = new AcademicYear()
-    o.start = startPar
-    o.end = endPar
-    o.remark = remarkPar
-    o.paymentPeriod = paymentPeriodPar
-    o.registrationStart = registrationStartPar
-    o.registrationEnd = registrationEndPar
-    o.monitoringStart = monitoringStartPar
-    o.monitoringEnd = monitoringEndPar
-    o.active = activePar
+    o.start = start
+    o.end = end
+    o.remark = remark
+    o.paymentPeriod = paymentPeriod
+    o.registrationStart = registrationStart
+    o.registrationEnd = registrationEnd
+    o.monitoringStart = monitoringStart
+    o.monitoringEnd = monitoringEnd
+    o.active = active
     o
 
   }

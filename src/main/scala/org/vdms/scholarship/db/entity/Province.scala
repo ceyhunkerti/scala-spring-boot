@@ -29,8 +29,8 @@ class Province(i: String, n: String) {
 
 
 object Province {
-  def apply(i: String, n: String=""): Province = {
-    new Province(i, n)
+  def apply(id: String, name: String=""): Province = {
+    new Province(id, name)
   }
 
   def unapply(o: Province): Option[(String, String)] = {

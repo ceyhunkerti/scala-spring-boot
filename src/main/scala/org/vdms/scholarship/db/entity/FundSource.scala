@@ -31,8 +31,8 @@ class FundSource(i: String, n: String, ne: String) {
 
 
 object FundSource {
-  def apply(i: String, n: String,ne:String): FundSource = {
-    new FundSource(i, n,ne)
+  def apply(id: String, name: String, nameEng: String): FundSource = {
+    new FundSource(id,name,nameEng)
   }
 
   def unapply(o: FundSource): Option[(String, String,String)] = {

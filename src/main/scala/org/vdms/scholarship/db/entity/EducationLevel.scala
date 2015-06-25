@@ -32,8 +32,8 @@ class EducationLevel(i: String, n: String, ne: String) {
 
 
 object EducationLevel {
-  def apply(i: String, n: String, ne: String): EducationLevel = {
-    new EducationLevel(i, n, ne)
+  def apply(id: String, name: String, nameEng: String): EducationLevel = {
+    new EducationLevel(id,name,nameEng)
   }
 
   def unapply(o: EducationLevel): Option[(String, String, String)] = {

@@ -33,12 +33,12 @@ class IncomeRange {
 
 
 object IncomeRange {
-  def apply(i: String, d: String, st: Int = 0, t: Int = Int.MaxValue): IncomeRange = {
+  def apply(id: String, description: String, start: Int = 0, end: Int = Int.MaxValue): IncomeRange = {
     val o = new IncomeRange()
-    o.id = i
-    o.description = d
-    o.start = st
-    o.end = t
+    o.id = id
+    o.description = description
+    o.start = start
+    o.end = end
     o
   }
 
