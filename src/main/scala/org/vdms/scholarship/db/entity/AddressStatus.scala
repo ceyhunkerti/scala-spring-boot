@@ -27,3 +27,13 @@ class AddressStatus(i: String, n: String, ne: String) {
 
 
 }
+
+object AddressStatus {
+  def apply(i: String, n: String, ne: String) = {
+    new AddressStatus(i, n, ne)
+  }
+
+  def unapply(o: AddressStatus): Option[(String, String, String)] = {
+    Some(o.id, o.name, o.nameEng)
+  }
+}

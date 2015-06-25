@@ -13,7 +13,7 @@ import scala.beans.BeanProperty
  */
 
 @Entity
-class FundSource(i: String, n: String) {
+class FundSource(i: String, n: String, ne: String) {
 
   @Id
   @BeanProperty
@@ -21,6 +21,19 @@ class FundSource(i: String, n: String) {
   @BeanProperty
   @Column(nullable = false)
   var name: String = n
+  @BeanProperty
+  @Column(nullable = false)
+  var nameEng: String = ne
+
+}
 
 
+object FundSource {
+  def apply(i: String, n: String,ne:String): FundSource = {
+    new FundSource(i, n,ne)
+  }
+
+  def unapply(o: FundSource): Option[(String, String,String)] = {
+    Some(o.id, o.name,o.nameEng)
+  }
 }

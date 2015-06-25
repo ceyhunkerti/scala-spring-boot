@@ -27,3 +27,13 @@ class Discipline(i: String, n: String, ne: String) {
 
 
 }
+
+object Discipline {
+  def apply(i: String, n: String, ne: String): Discipline = {
+    new Discipline(i, n, ne)
+  }
+
+  def unapply(o: Discipline): Option[(String, String, String)] = {
+    Some(o.id, o.name, o.nameEng)
+  }
+}

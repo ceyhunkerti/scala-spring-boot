@@ -30,3 +30,14 @@ class IncomeRange(i: String, d: String, st: Int, t: Int) {
 
 
 }
+
+
+object IncomeRange {
+  def apply(i: String, d: String, st: Int, t: Int): IncomeRange = {
+    new IncomeRange(i, d, st, t)
+  }
+
+  def unapply(o: IncomeRange): Option[(String, String, Int, Int)] = {
+    Some(o.id, o.description, o.start, o.end)
+  }
+}

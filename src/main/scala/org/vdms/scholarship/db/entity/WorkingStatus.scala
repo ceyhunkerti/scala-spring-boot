@@ -24,3 +24,14 @@ class WorkingStatus(i: String, n: String) {
 
 
 }
+
+
+object WorkingStatus {
+  def apply(i: String, n: String): WorkingStatus = {
+    new WorkingStatus(i, n)
+  }
+
+  def unapply(o: WorkingStatus): Option[(String, String, String)] = {
+    Some(o.id, o.name)
+  }
+}

@@ -27,3 +27,14 @@ class EducationLevel(i: String, n: String, ne: String) {
 
 
 }
+
+
+object EducationLevel {
+  def apply(i: String, n: String, ne: String): EducationLevel = {
+    new EducationLevel(i, n, ne)
+  }
+
+  def unapply(o: EducationLevel): Option[(String, String, String)] = {
+    Some(o.id, o.name, o.nameEng)
+  }
+}

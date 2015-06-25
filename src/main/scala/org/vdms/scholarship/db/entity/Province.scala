@@ -22,5 +22,15 @@ class Province(i: String, n: String) {
   @Column(nullable = false)
   var name: String = n
 
+}
 
+
+object Province {
+  def apply(i: String, n: String): Province = {
+    new Province(i, n)
+  }
+
+  def unapply(o: Province): Option[(String, String)] = {
+    Some(o.id, o.name)
+  }
 }

@@ -27,3 +27,13 @@ class Occupation(i: String, n: String, ne: String) {
 
 
 }
+
+object Occupation {
+  def apply(i: String, n: String,ne:String): Occupation = {
+    new Occupation(i, n,ne)
+  }
+
+  def unapply(o: Occupation): Option[(String, String,String)] = {
+    Some(o.id, o.name,o.nameEng)
+  }
+}

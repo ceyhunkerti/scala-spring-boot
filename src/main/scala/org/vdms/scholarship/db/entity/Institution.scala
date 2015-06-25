@@ -39,3 +39,13 @@ class Institution(i: String, n: String, ne: String, pro: Province, add: String, 
   var active: Boolean = act
 
 }
+
+object Institution {
+  def apply(i: String, n: String, ne: String, pro: Province, add: String, web: String, act: Boolean) = {
+    new Institution(i, n, ne, pro, add, web, act)
+  }
+
+  def unapply(o: Institution): Option[(String, String, String, Province, String, String, Boolean)] = {
+    Some(o.id, o.name, o.nameEn, o.province, o.address, o.website, o.active)
+  }
+}
