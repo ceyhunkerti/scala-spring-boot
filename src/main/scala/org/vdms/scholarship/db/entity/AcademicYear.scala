@@ -14,46 +14,38 @@ import scala.beans.BeanProperty
  */
 
 @Entity
-class AcademicYear(startPar: Int,
-                   endPar: Int,
-                   remarkPar: String,
-                   paymentPeriodPar: Boolean,
-                   registrationStartPar: LocalDate,
-                   registrationEndPar: LocalDate,
-                   monitoringStartPar: LocalDate,
-                   monitoringEndPar: LocalDate,
-                   activePar: Boolean) {
+class AcademicYear {
 
   @Id
   @GeneratedValue
   var id: Int = _
   @BeanProperty
   @Column(nullable = false)
-  var start: Int = startPar
+  var start: Int = _
   @BeanProperty
   @Column(nullable = false)
-  var end: Int = endPar
+  var end: Int = _
   @BeanProperty
   @Column(nullable = false)
-  var remark: String = remarkPar
+  var remark: String = _
   @BeanProperty
   @Column(nullable = false)
-  var paymentPeriod: Boolean = paymentPeriodPar
+  var paymentPeriod: Boolean = _
   @BeanProperty
   @Column(nullable = false)
-  var registrationStart: LocalDate = registrationStartPar
+  var registrationStart: LocalDate = _
   @BeanProperty
   @Column(nullable = false)
-  var registrationEnd: LocalDate = registrationEndPar
+  var registrationEnd: LocalDate = _
   @BeanProperty
   @Column(nullable = false)
-  var monitoringStart: LocalDate = monitoringStartPar
+  var monitoringStart: LocalDate = _
   @BeanProperty
   @Column(nullable = false)
-  var monitoringEnd: LocalDate = monitoringEndPar
+  var monitoringEnd: LocalDate = _
   @BeanProperty
   @Column(nullable = false)
-  var active: Boolean = activePar
+  var active: Boolean = _
 
 
 }
@@ -68,15 +60,18 @@ object AcademicYear {
             monitoringStartPar: LocalDate,
             monitoringEndPar: LocalDate,
             activePar: Boolean): AcademicYear = {
-    new AcademicYear(startPar,
-      endPar,
-      remarkPar,
-      paymentPeriodPar,
-      registrationStartPar,
-      registrationEndPar,
-      monitoringStartPar,
-      monitoringEndPar,
-      activePar)
+    val o = new AcademicYear()
+    o.start = startPar
+    o.end = endPar
+    o.remark = remarkPar
+    o.paymentPeriod = paymentPeriodPar
+    o.registrationStart = registrationStartPar
+    o.registrationEnd = registrationEndPar
+    o.monitoringStart = monitoringStartPar
+    o.monitoringEnd = monitoringEndPar
+    o.active = activePar
+    o
+
   }
 
   def unapply(o: AcademicYear): Option[(Int, Int, Int, String, Boolean, LocalDate, LocalDate, LocalDate, LocalDate, Boolean)] = {

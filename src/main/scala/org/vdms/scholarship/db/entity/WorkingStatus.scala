@@ -24,6 +24,10 @@ class WorkingStatus(i: String, n: String, ne: String) {
   @BeanProperty
   @Column(nullable = false)
   var nameEng: String = n
+
+  def this()={
+    this(null,null,null)
+  }
 }
 
 

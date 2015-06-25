@@ -25,7 +25,9 @@ class EducationLevel(i: String, n: String, ne: String) {
   @Column(nullable = false)
   var nameEng: String = ne
 
-
+  def this()={
+    this(null,null,null)
+  }
 }
 
 

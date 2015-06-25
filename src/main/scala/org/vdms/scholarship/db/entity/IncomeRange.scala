@@ -13,28 +13,33 @@ import scala.beans.BeanProperty
  */
 
 @Entity
-class IncomeRange(i: String, d: String, st: Int, t: Int) {
+class IncomeRange {
 
   @Id
   @BeanProperty
-  var id: String = i
+  var id: String = _
   @BeanProperty
   @Column(nullable = false)
-  var description: String = d
+  var description: String = _
   @BeanProperty
   @Column(nullable = false)
-  var start: Int = st
+  var start: Int = _
   @BeanProperty
   @Column(nullable = false)
-  var end: Int = t
+  var end: Int = _
 
 
 }
 
 
 object IncomeRange {
-  def apply(i: String, d: String, st: Int=0, t: Int=Int.MaxValue): IncomeRange = {
-    new IncomeRange(i, d, st, t)
+  def apply(i: String, d: String, st: Int = 0, t: Int = Int.MaxValue): IncomeRange = {
+    val o = new IncomeRange()
+    o.id = i
+    o.description = d
+    o.start = st
+    o.end = t
+    o
   }
 
   def unapply(o: IncomeRange): Option[(String, String, Int, Int)] = {

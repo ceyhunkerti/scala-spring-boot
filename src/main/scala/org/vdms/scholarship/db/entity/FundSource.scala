@@ -24,7 +24,9 @@ class FundSource(i: String, n: String, ne: String) {
   @BeanProperty
   @Column(nullable = false)
   var nameEng: String = ne
-
+  def this()={
+    this(null,null,null)
+  }
 }
 
 

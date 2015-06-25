@@ -22,6 +22,9 @@ class Province(i: String, n: String) {
   @Column(nullable = false)
   var name: String = n
 
+  def this()={
+    this(null,null)
+  }
 }
 
 

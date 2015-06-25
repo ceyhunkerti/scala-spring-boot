@@ -13,36 +13,44 @@ import scala.beans.BeanProperty
  */
 
 @Entity
-class Institution(i: String, n: String, ne: String, pro: Province, add: String, web: String, act: Boolean) {
+class Institution {
 
   @Id
   @BeanProperty
-  var id: String = i
+  var id: String = _
   @BeanProperty
   @Column(nullable = false)
-  var name: String = n
+  var name: String = _
   @BeanProperty
   @Column(nullable = false)
-  var nameEn: String = ne
+  var nameEn: String = _
   @BeanProperty
   @JoinColumn(nullable = false)
   @ManyToOne(fetch = FetchType.EAGER)
-  var province: Province = pro
+  var province: Province = _
   @BeanProperty
   @Column(nullable = false)
-  var address: String = add
+  var address: String = _
   @BeanProperty
   @Column(nullable = false)
-  var website: String = web
+  var website: String = _
   @BeanProperty
   @Column(nullable = false)
-  var active: Boolean = act
+  var active: Boolean = _
 
 }
 
 object Institution {
   def apply(i: String, n: String, ne: String, pro: Province, add: String, web: String, act: Boolean) = {
-    new Institution(i, n, ne, pro, add, web, act)
+    val o = new Institution()
+    o.id = i
+    o.name = n
+    o.nameEn = ne
+    o.province = pro
+    o.address = add
+    o.website = web
+    o.active = act
+    o
   }
 
   def unapply(o: Institution): Option[(String, String, String, Province, String, String, Boolean)] = {
