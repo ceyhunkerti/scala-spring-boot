@@ -1,7 +1,8 @@
 package org.vdms.scholarship.db.util
 
+import java.time.{LocalDate, Month}
+
 import org.vdms.scholarship.db.entity._
-import org.vdms.scholarship.db.repository._
 
 /**
  * Created by Deny Prasetyo
@@ -13,9 +14,14 @@ import org.vdms.scholarship.db.repository._
 
 
 object SeedData {
+
   import org.vdms.scholarship.util.text.StringSlugUtil._
 
-  val addrStatusList = List(
+  val academicYearList = List(
+    AcademicYear(2015, 2016, "2015 - 2016", paymentPeriod = false, LocalDate.of(2015, Month.JULY, 1), LocalDate.of(2015, Month.DECEMBER, 31), LocalDate.of(2015, Month.JULY, 1), LocalDate.of(2015, Month.DECEMBER, 31), activePar = true)
+  )
+
+  val addressStatusList = List(
     AddressStatus("Other".toSlug, "Lain-lain", "Other"),
     AddressStatus("Parents House".toSlug, "Rumah Orang Tua", "Parents House"),
     AddressStatus("Relatives House".toSlug, "Rumah Saudara", "Relatives House"),
@@ -70,7 +76,7 @@ object SeedData {
     Discipline("Tourism".toSlug, "Tourism", "Tourism")
   )
 
-  val levelList = List(
+  val educationLevelList = List(
     EducationLevel("Others".toSlug, "Lain-lain", "Others"),
     EducationLevel("SD".toSlug, "SD", "SD"),
     EducationLevel("SMP".toSlug, "SMP", "SMP"),
@@ -85,7 +91,7 @@ object SeedData {
   )
 
 
-  val incomeList = List(
+  val incomeRangeList = List(
     IncomeRange("0to500.000", "< 500.000", 0, 500000),
     IncomeRange("500.000to1.000.000", "500.000 - 1.000.000", 500000, 1000000),
     IncomeRange("1.000.000to2.000.000", "1.000.000 - 2.000.000", 1000000, 2000000),
@@ -96,8 +102,6 @@ object SeedData {
     IncomeRange("6.000.000to7.000.000", "6.000.000 - 7.000.000", 6000000, 7000000),
     IncomeRange("7.000.000toInfinite", "> 7.000.000", 7000000)
   )
-
-
 
 
   val provinceList = List(
@@ -138,9 +142,7 @@ object SeedData {
   )
 
 
-
-
-  val sourceList = List(
+  val fundSourceList = List(
     FundSource("Other".toSlug, "Lain-lain", "Other"),
     FundSource("Parents".toSlug, "Orang Tua", "Parents"),
     FundSource("Guardian".toSlug, "Wali", "Guardian"),
@@ -148,15 +150,11 @@ object SeedData {
   )
 
 
-
-
-  val statusList = List(
+  val workingStatusList = List(
     WorkingStatus("No".toSlug, "Tidak", "No"),
     WorkingStatus("Yes".toSlug, "Ya", "Yes"),
     WorkingStatus("Part Time".toSlug, "Paruh Waktu", "Part Time")
   )
-
-
 
 
   val occupationList = List(
@@ -174,46 +172,45 @@ object SeedData {
   )
 
 
-
   val institutionList = List(
-    Institution(i = "UNAIR", n = "Airlangga University, Surabaya", ne = "Airlangga University, Surabaya", pro = Province("Jawa Timur".toSlug), add = "", web = "", act = true),
-    Institution(i = "ALFATH", n = "Al Fathonah Midwifery Academy, Jakarta", ne = "Al Fathonah Midwifery Academy, Jakarta", pro = Province("DKI Jakarta".toSlug), add = "", web = "", act = true),
-    Institution(i = "ANDARA", n = "Andakara Nursery Academy, Jakarta", ne = "Andakara Nursery Academy, Jakarta", pro = Province("DKI Jakarta".toSlug), add = "", web = "", act = true),
-    Institution(i = "UNAND", n = "Andalas University, Padang", ne = "Andalas University, Padang", pro = Province("Sumatera Barat".toSlug), add = "", web = "", act = true),
-    Institution(i = "UKAW", n = "Artha Wacana Christian University, Kupang", ne = "Artha Wacana Christian University, Kupang", pro = Province("Nusa Tenggara Timur".toSlug), add = "", web = "", act = true),
-    Institution(i = "UAJM", n = "Atma Jaya Makassar University, Makassar", ne = "Atma Jaya Makassar University, Makassar", pro = Province("Sulawesi Selatan".toSlug), add = "", web = "", act = true),
-    Institution(i = "UBH", n = "Bung Hatta University, Padang", ne = "Bung Hatta University, Padang", pro = Province("Sumatera Barat".toSlug), add = "", web = "", act = true),
-    Institution(i = "USALLE", n = "De La Salle University of Manado, Manado", ne = "De La Salle University of Manado, Manado", pro = Province("Sulawesi Utara".toSlug), add = "", web = "", act = true),
-    Institution(i = "UNHAS", n = "Hasanuddin University, Makassar", ne = "Hasanuddin University, Makassar", pro = Province("Sulawesi Selatan".toSlug), add = "", web = "", act = true),
-    Institution(i = "IPB", n = "Bogor Agricultural University, Bogor", ne = "Bogor Agricultural University, Bogor", pro = Province("Jawa Barat".toSlug), add = "", web = "", act = true),
-    Institution(i = "ITB", n = "Bandung Institute of Technology", ne = "Bandung Institute of Technology", pro = Province("Jawa Barat".toSlug), add = "", web = "", act = true),
-    Institution(i = "ITS", n = "Sepuluh Nopember Institute ot Technology", ne = "Sepuluh Nopember Institute ot Technology", pro = Province("Jawa Timur".toSlug), add = "", web = "", act = true),
-    Institution(i = "UMACH", n = "Ma Chung University, Malang", ne = "Ma Chung University, Malang", pro = Province("Jawa Timur".toSlug), add = "", web = "", act = true),
-    Institution(i = "UNPAD", n = "Padjadjaran University, Bandung", ne = "Padjadjaran University, Bandung", pro = Province("Jawa Barat".toSlug), add = "", web = "", act = true),
-    Institution(i = "UNPATI", n = "Pattimura University, Ambon", ne = "Pattimura University, Ambon", pro = Province("Maluku".toSlug), add = "", web = "", act = true),
-    Institution(i = "UPETRA", n = "Petra Christian University, Surabaya", ne = "Petra Christian University, Surabaya", pro = Province("Jawa Timur".toSlug), add = "", web = "", act = true),
-    Institution(i = "STIKOM", n = "Universitas Uyelindo ,Kupang", ne = "Universitas Uyelindo ,Kupang", pro = Province("Nusa Tenggara Timur".toSlug), add = "", web = "", act = true),
-    Institution(i = "STMUSI", n = "Sekolah Tinggi MUSI, Palembang", ne = "Sekolah Tinggi MUSI, Palembang", pro = Province("Sumatera Selatan".toSlug), add = "", web = "", act = true),
-    Institution(i = "UNTAN", n = "Tanjungpura University, Pontianak", ne = "Tanjungpura University, Pontianak", pro = Province("Kalimantan Barat".toSlug), add = "", web = "", act = true),
-    Institution(i = "UKDW", n = "Duta Wacana Christian University, Yogyakarta", ne = "Duta Wacana Christian University, Yogyakarta", pro = Province("D.I. Yogyakarta".toSlug), add = "", web = "", act = true),
-    Institution(i = "UKIM", n = "Christian University of Indonesia in Maluku, Ambon", ne = "Christian University of Indonesia in Maluku, Ambon", pro = Province("Maluku".toSlug), add = "", web = "", act = true),
-    Institution(i = "UKSW", n = "Satya Wacana Christian University, Salatiga", ne = "Satya Wacana Christian University, Salatiga", pro = Province("Jawa Tengah".toSlug), add = "", web = "", act = true),
-    Institution(i = "UNDANA", n = "Nusa Cendana University, Kupang", ne = "Nusa Cendana University, Kupang", pro = Province("Nusa Tenggara Timur".toSlug), add = "", web = "", act = true),
-    Institution(i = "USOEGI", n = "Soegijapranata Catholic University, Semarang", ne = "Soegijapranata Catholic University, Semarang", pro = Province("Jawa Tengah".toSlug), add = "", web = "", act = true),
-    Institution(i = "UNIMED", n = "State University of Medan, Medan", ne = "State University of Medan, Medan", pro = Province("Sumatera Utara".toSlug), add = "", web = "", act = true),
-    Institution(i = "UGM", n = "Gadjah Mada University, Yogyakarta", ne = "Gadjah Mada University, Yogyakarta", pro = Province("D.I. Yogyakarta".toSlug), add = "", web = "", act = true),
-    Institution(i = "UHANTU", n = "Hang Tuah University, Surabaya", ne = "Hang Tuah University, Surabaya", pro = Province("Jawa Timur".toSlug), add = "", web = "", act = true),
-    Institution(i = "UNP", n = "State University of Padang , Padang", ne = "State University of Padang , Padang", pro = Province("Sumatera Barat".toSlug), add = "", web = "", act = true),
-    Institution(i = "UNLAM", n = "Lambung Mangkurat University, Banjarmasin", ne = "Lambung Mangkurat University, Banjarmasin", pro = Province("Kalimantan Selatan".toSlug), add = "", web = "", act = true),
-    Institution(i = "UNNES", n = "State University of Semarang, Semarang", ne = "State University of Semarang, Semarang", pro = Province("Jawa Tengah".toSlug), add = "", web = "", act = true),
-    Institution(i = "UNSRAT", n = "Sam Ratulangi University, Manado", ne = "Sam Ratulangi University, Manado", pro = Province("Sulawesi Utara".toSlug), add = "", web = "", act = true),
-    Institution(i = "USD", n = "Sanata Dharma University, Yogyakarta", ne = "Sanata Dharma University, Yogyakarta", pro = Province("D.I. Yogyakarta".toSlug), add = "", web = "", act = true),
-    Institution(i = "UNWIRA", n = "Widya Mandira Catholic University, Kupang", ne = "Widya Mandira Catholic University, Kupang", pro = Province("Nusa Tenggara Timur".toSlug), add = "", web = "", act = true),
-    Institution(i = "UWKS", n = "Wijaya Kusuma Surabaya University, Surabaya", ne = "Wijaya Kusuma Surabaya University, Surabaya", pro = Province("Jawa Timur".toSlug), add = "", web = "", act = true),
-    Institution(i = "USU", n = "University of Sumatera Utara, Medan", ne = "University of Sumatera Utara, Medan", pro = Province("Sumatera Utara".toSlug), add = "", web = "", act = true),
-    Institution(i = "OTHER", n = "Other University/University Not Listed", ne = "Other University/University Not Listed", pro = Province("D.I. Yogyakarta".toSlug), add = "", web = "", act = true),
-    Institution(i = "REGPAC", n = "SMAK Regina Pacis, Bajawa", ne = "SMAK Regina Pacis, Bajawa", pro = Province("Nusa Tenggara Timur".toSlug), add = "", web = "", act = true),
-    Institution(i = "RvG", n = "RVG, Yogyakarta", ne = "RVG, Yogyakarta", pro = Province("D.I. Yogyakarta".toSlug), add = "", web = "", act = true)
+    Institution(id = "UNAIR", name = "Airlangga University, Surabaya", nameEng = "Airlangga University, Surabaya", province = Province("Jawa Timur".toSlug), address = "", website = "", active = true),
+    Institution(id = "ALFATH", name = "Al Fathonah Midwifery Academy, Jakarta", nameEng = "Al Fathonah Midwifery Academy, Jakarta", province = Province("DKI Jakarta".toSlug), address = "", website = "", active = true),
+    Institution(id = "ANDARA", name = "Andakara Nursery Academy, Jakarta", nameEng = "Andakara Nursery Academy, Jakarta", province = Province("DKI Jakarta".toSlug), address = "", website = "", active = true),
+    Institution(id = "UNAND", name = "Andalas University, Padang", nameEng = "Andalas University, Padang", province = Province("Sumatera Barat".toSlug), address = "", website = "", active = true),
+    Institution(id = "UKAW", name = "Artha Wacana Christian University, Kupang", nameEng = "Artha Wacana Christian University, Kupang", province = Province("Nusa Tenggara Timur".toSlug), address = "", website = "", active = true),
+    Institution(id = "UAJM", name = "Atma Jaya Makassar University, Makassar", nameEng = "Atma Jaya Makassar University, Makassar", province = Province("Sulawesi Selatan".toSlug), address = "", website = "", active = true),
+    Institution(id = "UBH", name = "Bung Hatta University, Padang", nameEng = "Bung Hatta University, Padang", province = Province("Sumatera Barat".toSlug), address = "", website = "", active = true),
+    Institution(id = "USALLE", name = "De La Salle University of Manado, Manado", nameEng = "De La Salle University of Manado, Manado", province = Province("Sulawesi Utara".toSlug), address = "", website = "", active = true),
+    Institution(id = "UNHAS", name = "Hasanuddin University, Makassar", nameEng = "Hasanuddin University, Makassar", province = Province("Sulawesi Selatan".toSlug), address = "", website = "", active = true),
+    Institution(id = "IPB", name = "Bogor Agricultural University, Bogor", nameEng = "Bogor Agricultural University, Bogor", province = Province("Jawa Barat".toSlug), address = "", website = "", active = true),
+    Institution(id = "ITB", name = "Bandung Institute of Technology", nameEng = "Bandung Institute of Technology", province = Province("Jawa Barat".toSlug), address = "", website = "", active = true),
+    Institution(id = "ITS", name = "Sepuluh Nopember Institute ot Technology", nameEng = "Sepuluh Nopember Institute ot Technology", province = Province("Jawa Timur".toSlug), address = "", website = "", active = true),
+    Institution(id = "UMACH", name = "Ma Chung University, Malang", nameEng = "Ma Chung University, Malang", province = Province("Jawa Timur".toSlug), address = "", website = "", active = true),
+    Institution(id = "UNPAD", name = "Padjadjaran University, Bandung", nameEng = "Padjadjaran University, Bandung", province = Province("Jawa Barat".toSlug), address = "", website = "", active = true),
+    Institution(id = "UNPATI", name = "Pattimura University, Ambon", nameEng = "Pattimura University, Ambon", province = Province("Maluku".toSlug), address = "", website = "", active = true),
+    Institution(id = "UPETRA", name = "Petra Christian University, Surabaya", nameEng = "Petra Christian University, Surabaya", province = Province("Jawa Timur".toSlug), address = "", website = "", active = true),
+    Institution(id = "STIKOM", name = "Universitas Uyelindo ,Kupang", nameEng = "Universitas Uyelindo ,Kupang", province = Province("Nusa Tenggara Timur".toSlug), address = "", website = "", active = true),
+    Institution(id = "STMUSI", name = "Sekolah Tinggi MUSI, Palembang", nameEng = "Sekolah Tinggi MUSI, Palembang", province = Province("Sumatera Selatan".toSlug), address = "", website = "", active = true),
+    Institution(id = "UNTAN", name = "Tanjungpura University, Pontianak", nameEng = "Tanjungpura University, Pontianak", province = Province("Kalimantan Barat".toSlug), address = "", website = "", active = true),
+    Institution(id = "UKDW", name = "Duta Wacana Christian University, Yogyakarta", nameEng = "Duta Wacana Christian University, Yogyakarta", province = Province("D.I. Yogyakarta".toSlug), address = "", website = "", active = true),
+    Institution(id = "UKIM", name = "Christian University of Indonesia in Maluku, Ambon", nameEng = "Christian University of Indonesia in Maluku, Ambon", province = Province("Maluku".toSlug), address = "", website = "", active = true),
+    Institution(id = "UKSW", name = "Satya Wacana Christian University, Salatiga", nameEng = "Satya Wacana Christian University, Salatiga", province = Province("Jawa Tengah".toSlug), address = "", website = "", active = true),
+    Institution(id = "UNDANA", name = "Nusa Cendana University, Kupang", nameEng = "Nusa Cendana University, Kupang", province = Province("Nusa Tenggara Timur".toSlug), address = "", website = "", active = true),
+    Institution(id = "USOEGI", name = "Soegijapranata Catholic University, Semarang", nameEng = "Soegijapranata Catholic University, Semarang", province = Province("Jawa Tengah".toSlug), address = "", website = "", active = true),
+    Institution(id = "UNIMED", name = "State University of Medan, Medan", nameEng = "State University of Medan, Medan", province = Province("Sumatera Utara".toSlug), address = "", website = "", active = true),
+    Institution(id = "UGM", name = "Gadjah Mada University, Yogyakarta", nameEng = "Gadjah Mada University, Yogyakarta", province = Province("D.I. Yogyakarta".toSlug), address = "", website = "", active = true),
+    Institution(id = "UHANTU", name = "Hang Tuah University, Surabaya", nameEng = "Hang Tuah University, Surabaya", province = Province("Jawa Timur".toSlug), address = "", website = "", active = true),
+    Institution(id = "UNP", name = "State University of Padang , Padang", nameEng = "State University of Padang , Padang", province = Province("Sumatera Barat".toSlug), address = "", website = "", active = true),
+    Institution(id = "UNLAM", name = "Lambung Mangkurat University, Banjarmasin", nameEng = "Lambung Mangkurat University, Banjarmasin", province = Province("Kalimantan Selatan".toSlug), address = "", website = "", active = true),
+    Institution(id = "UNNES", name = "State University of Semarang, Semarang", nameEng = "State University of Semarang, Semarang", province = Province("Jawa Tengah".toSlug), address = "", website = "", active = true),
+    Institution(id = "UNSRAT", name = "Sam Ratulangi University, Manado", nameEng = "Sam Ratulangi University, Manado", province = Province("Sulawesi Utara".toSlug), address = "", website = "", active = true),
+    Institution(id = "USD", name = "Sanata Dharma University, Yogyakarta", nameEng = "Sanata Dharma University, Yogyakarta", province = Province("D.I. Yogyakarta".toSlug), address = "", website = "", active = true),
+    Institution(id = "UNWIRA", name = "Widya Mandira Catholic University, Kupang", nameEng = "Widya Mandira Catholic University, Kupang", province = Province("Nusa Tenggara Timur".toSlug), address = "", website = "", active = true),
+    Institution(id = "UWKS", name = "Wijaya Kusuma Surabaya University, Surabaya", nameEng = "Wijaya Kusuma Surabaya University, Surabaya", province = Province("Jawa Timur".toSlug), address = "", website = "", active = true),
+    Institution(id = "USU", name = "University of Sumatera Utara, Medan", nameEng = "University of Sumatera Utara, Medan", province = Province("Sumatera Utara".toSlug), address = "", website = "", active = true),
+    Institution(id = "OTHER", name = "Other University/University Not Listed", nameEng = "Other University/University Not Listed", province = Province("D.I. Yogyakarta".toSlug), address = "", website = "", active = true),
+    Institution(id = "REGPAC", name = "SMAK Regina Pacis, Bajawa", nameEng = "SMAK Regina Pacis, Bajawa", province = Province("Nusa Tenggara Timur".toSlug), address = "", website = "", active = true),
+    Institution(id = "RvG", name = "RVG, Yogyakarta", nameEng = "RVG, Yogyakarta", province = Province("D.I. Yogyakarta".toSlug), address = "", website = "", active = true)
   )
 
 }
