@@ -1,7 +1,12 @@
 package org.vdms.scholarship.db.repository
 
+import java.util.{List => JList}
+
+import org.springframework.data.jpa.repository.Query
 import org.springframework.data.repository.PagingAndSortingRepository
-import org.vdms.scholarship.db.entity.Student
+import org.springframework.data.repository.query.Param
+import org.springframework.data.rest.core.annotation.{RepositoryRestResource, RestResource}
+import org.vdms.scholarship.db.entity.{Institution, Student}
 
 /**
  * Created by Deny Prasetyo
@@ -11,7 +16,11 @@ import org.vdms.scholarship.db.entity.Student
  * deny.prasetyo@gdplabs.id
  */
 
-
+@RepositoryRestResource(collectionResourceRel = "students", path = "students")
 trait StudentRepository extends PagingAndSortingRepository[Student, String] {
+
+  @RestResource(path = "institution", rel = "institution")
+  @Query("SELECT s FROM Student s WHERE s.institution=:institution")
+  def findByInstitution(@Param("institution") institution: Institution): JList[Student]
 
 }
