@@ -76,12 +76,18 @@ CREATE TABLE province (
     name character varying(255) NOT NULL
 );
 
+CREATE TABLE property (
+    id character varying(255) NOT NULL,
+    value character varying(255) NOT NULL,
+    type character varying(255) NOT NULL
+);
+
 
 CREATE TABLE student (
     username character varying(255) NOT NULL,
-    activities character varying(255) NOT NULL,
-    address character varying(255) NOT NULL,
-    alternative_phone_number character varying(255),
+    activities character varying(2200) NOT NULL,
+    address character varying(1500) NOT NULL,
+    alternative_phone_number character varying(550),
     bank_account_name character varying(255),
     bank_account_number character varying(255),
     bank_name character varying(255),
@@ -98,7 +104,7 @@ CREATE TABLE student (
     major character varying(255) NOT NULL,
     name character varying(255) NOT NULL,
     occupation character varying(255) NOT NULL,
-    parent_address character varying(255) NOT NULL,
+    parent_address character varying(2500) NOT NULL,
     phone character varying(255) NOT NULL,
     post_code character varying(255) NOT NULL,
     school_entry_year integer NOT NULL,
@@ -114,7 +120,7 @@ CREATE TABLE student (
     level character varying(255) NOT NULL,
     parent_education_level character varying(255) NOT NULL,
     parent_income_range character varying(255) NOT NULL,
-    parent_occupation character varying(255) NOT NULL,
+    parent_occupation character varying(1200) NOT NULL,
     source_of_fund character varying(255) NOT NULL,
     working_status character varying(255) NOT NULL
 );
@@ -161,6 +167,10 @@ ALTER TABLE ONLY occupation
 
 ALTER TABLE ONLY province
     ADD CONSTRAINT province_pkey PRIMARY KEY (id);
+
+
+ALTER TABLE ONLY property
+    ADD CONSTRAINT property_pkey PRIMARY KEY (id);
 
 
 ALTER TABLE ONLY student
