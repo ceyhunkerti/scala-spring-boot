@@ -1,4 +1,4 @@
-# VDMS Administration System
+# Scholarship Administration System
 
 ## Building
 This Project using Gradle as Build System with Scala Plugin. 
