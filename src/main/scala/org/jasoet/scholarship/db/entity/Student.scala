@@ -3,9 +3,7 @@ package org.jasoet.scholarship.db.entity
 import java.time.{LocalDate, Year}
 import javax.persistence._
 
-import org.jasoet.scholarship.db.value.StudentStatus
 import org.jasoet.scholarship.db.value.StudentStatus.StudentStatus
-import org.jasoet.scholarship.util.value.Gender
 import org.jasoet.scholarship.util.value.Gender.Gender
 
 import scala.beans.{BeanProperty, BooleanBeanProperty}
@@ -78,7 +76,7 @@ class Student {
   @Column(nullable = false)
   var postCode: String = _
   @BeanProperty
-  @Column(nullable = false)
+  @Column(nullable = false, length = 2200)
   var activities: String = _
   @BeanProperty
   @Column(nullable = false)
@@ -87,7 +85,7 @@ class Student {
   @Column(nullable = false)
   var phone: String = _
   @BeanProperty
-  @Column(nullable = false)
+  @Column(nullable = false, length = 1500)
   var address: String = _
   @BeanProperty
   @JoinColumn(nullable = false)
@@ -101,7 +99,7 @@ class Student {
   @ManyToOne(fetch = FetchType.EAGER)
   var workingStatus: WorkingStatus = _
   @BeanProperty
-  @Column(nullable = false)
+  @Column(nullable = false, length = 1200)
   var occupation: String = _
   @BeanProperty
   @JoinColumn(nullable = false)
@@ -112,7 +110,7 @@ class Student {
   @ManyToOne(fetch = FetchType.EAGER)
   var sourceOfFund: FundSource = _
   @BeanProperty
-  @Column(nullable = false)
+  @Column(nullable = false, length = 2500)
   var parentAddress: String = _
   @BeanProperty
   @JoinColumn(nullable = false)
@@ -145,6 +143,7 @@ class Student {
   @BeanProperty
   var toeflScore: Int = _
   @BeanProperty
+  @Column(length = 550)
   var alternativePhoneNumber: String = _
 
 }
