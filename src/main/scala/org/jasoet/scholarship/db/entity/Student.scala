@@ -17,7 +17,7 @@ import scala.beans.{BeanProperty, BooleanBeanProperty}
  */
 
 @Entity
-class Student {
+class Student  extends Serializable{
 
   @Id
   @BeanProperty

@@ -13,7 +13,7 @@ import scala.beans.BeanProperty
  */
 
 @Entity
-class Discipline(i: String, n: String, ne: String) {
+class Discipline(i: String, n: String, ne: String) extends Serializable {
 
   @Id
   @BeanProperty

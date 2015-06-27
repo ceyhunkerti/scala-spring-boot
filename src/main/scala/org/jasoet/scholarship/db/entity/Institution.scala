@@ -13,7 +13,7 @@ import scala.beans.BeanProperty
  */
 
 @Entity
-class Institution {
+class Institution  extends Serializable{
 
   @Id
   @BeanProperty

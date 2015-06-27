@@ -13,7 +13,7 @@ import scala.beans.BeanProperty
  */
 
 @Entity
-class EducationLevel(i: String, n: String, ne: String) {
+class EducationLevel(i: String, n: String, ne: String) extends Serializable {
 
   @Id
   @BeanProperty

@@ -13,7 +13,7 @@ import scala.beans.BeanProperty
  */
 
 @Entity
-class Province(i: String, n: String) {
+class Province(i: String, n: String) extends Serializable {
 
   @Id
   @BeanProperty

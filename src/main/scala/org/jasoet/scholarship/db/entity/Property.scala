@@ -17,7 +17,7 @@ import scala.util.{Failure, Success, Try}
  */
 
 @Entity
-class Property {
+class Property extends Serializable {
 
   @Id
   @BeanProperty

@@ -13,7 +13,7 @@ import scala.beans.BeanProperty
  */
 
 @Entity
-class AddressStatus(i: String, n: String, ne: String) {
+class AddressStatus(i: String, n: String, ne: String) extends Serializable {
 
   @Id
   @BeanProperty

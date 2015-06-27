@@ -13,7 +13,7 @@ import scala.beans.BeanProperty
  */
 
 @Entity
-class FundSource(i: String, n: String, ne: String) {
+class FundSource(i: String, n: String, ne: String) extends Serializable {
 
   @Id
   @BeanProperty
