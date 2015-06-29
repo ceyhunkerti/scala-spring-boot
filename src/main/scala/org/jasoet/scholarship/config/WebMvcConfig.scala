@@ -8,11 +8,20 @@ package org.jasoet.scholarship.config
  * deny.prasetyo@gdplabs.id
  */
 
-import org.springframework.context.annotation.Configuration
+import javax.validation.Validator
+
+import org.springframework.context.annotation.{Bean, Configuration}
+import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean
 import org.springframework.web.servlet.config.annotation.{ViewControllerRegistry, WebMvcConfigurerAdapter}
 
 @Configuration
 class WebMvcConfig extends WebMvcConfigurerAdapter {
+
+  @Bean
+  def validator: Validator = {
+    new LocalValidatorFactoryBean()
+  }
+
   override def addViewControllers(registry: ViewControllerRegistry) {
     registry.addViewController("/login").setViewName("login")
     registry.addViewController("/success").setViewName("success")
