@@ -8,18 +8,17 @@ package org.jasoet.scholarship.config
  * deny.prasetyo@gdplabs.id
  */
 
-import org.springframework.beans.factory.annotation.Autowired
+import org.jasoet.scholarship.config.auth.util.AltairPasswordEncoder
+import org.jasoet.scholarship.config.auth.{AltairUserDetails, AltairSecuritySupport, AltairUser}
 import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Configuration
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter
 import org.springframework.security.config.annotation.web.servlet.configuration.EnableWebMvcSecurity
 
 @Configuration
 @EnableWebMvcSecurity
 @EnableConfigurationProperties
-class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+class WebSecurityConfig extends AltairSecuritySupport {
 
   @throws(classOf[Exception])
   protected override def configure(http: HttpSecurity) {
@@ -37,10 +36,18 @@ class WebSecurityConfig extends WebSecurityConfigurerAdapter {
       .anyRequest().authenticated()
   }
 
-  @Autowired
-  @throws(classOf[Exception])
-  def configureGlobal(auth: AuthenticationManagerBuilder) {
-    auth.inMemoryAuthentication.withUser("user").password("password").roles("USER")
+
+  override def userResolver(uname: String): AltairUserDetails[_] = {
+    AltairUserDetails(
+      new AltairUser {
+        override def username: String = uname
+
+        override def name: String = "User"
+
+        override def password: String = AltairPasswordEncoder.encode("localhost")
+
+        override def email: String = "user@gdplabs.id"
+      }, Seq("SUPER_ADMIN"))
   }
 }
 
