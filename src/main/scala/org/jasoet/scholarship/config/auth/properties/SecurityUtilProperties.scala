@@ -1,4 +1,4 @@
-package org.jasoet.scholarship.config.properties
+package org.jasoet.scholarship.config.auth.properties
 
 import java.util.{HashMap => JHashMap, Map => JMap}
 
