@@ -18,7 +18,7 @@ This is Skeleton Project for Spring Boot using Scala instead of Java. Integrated
 
 ## Building
 * This Project using Gradle as Build System with Scala Plugin.     
-* Copy and Rename `application-sample.properties` to `application.properties` in `src/main/resources/` folder.   
+* Copy and Rename `sample-application.yaml` to `application.yaml` in `src/main/resources/` folder.   
 * Configure your database preferences.    
 * Execute `gradle clean run` for running application. Access it on `http://localhost:9090/`.      
 
