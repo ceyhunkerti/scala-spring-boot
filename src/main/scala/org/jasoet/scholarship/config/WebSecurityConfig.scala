@@ -9,6 +9,7 @@ package org.jasoet.scholarship.config
  */
 
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Configuration
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
@@ -16,7 +17,10 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.annotation.web.servlet.configuration.EnableWebMvcSecurity
 
 @Configuration
-@EnableWebMvcSecurity class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+@EnableWebMvcSecurity
+@EnableConfigurationProperties
+class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+
   @throws(classOf[Exception])
   protected override def configure(http: HttpSecurity) {
     http
