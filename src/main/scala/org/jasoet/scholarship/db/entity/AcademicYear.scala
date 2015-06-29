@@ -14,7 +14,7 @@ import scala.beans.BeanProperty
  */
 
 @Entity
-class AcademicYear extends Serializable{
+class AcademicYear extends Serializable {
 
   @Id
   @GeneratedValue

@@ -3,8 +3,6 @@ package org.jasoet.scholarship.util.id
 import java.time.LocalDateTime
 import java.util.concurrent.atomic.AtomicInteger
 
-import org.jasoet.scholarship.util.date.DateTimeUtil
-
 /**
  * Created by Deny Prasetyo
  * 24 June 2015

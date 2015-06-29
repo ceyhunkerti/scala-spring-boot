@@ -4,7 +4,6 @@ import java.time.LocalDateTime
 import java.util.Date
 import javax.persistence.{AttributeConverter, Converter}
 
-import org.jasoet.scholarship.util.date.DateTimeUtil
 import org.jasoet.scholarship.util.date.DateTimeUtil._
 
 /**

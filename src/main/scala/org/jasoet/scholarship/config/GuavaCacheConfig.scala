@@ -4,10 +4,9 @@ import java.util.concurrent.TimeUnit
 
 import com.google.common.cache.CacheBuilder
 import org.springframework.cache.CacheManager
-import org.springframework.cache.annotation.{CachingConfigurerSupport, EnableCaching}
+import org.springframework.cache.annotation.CachingConfigurerSupport
 import org.springframework.cache.guava.GuavaCacheManager
 import org.springframework.cache.interceptor._
-import org.springframework.context.annotation.Configuration
 
 /**
  * Created by Deny Prasetyo

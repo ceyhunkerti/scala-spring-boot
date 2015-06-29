@@ -22,11 +22,12 @@ class PropertyTypeConverter extends AttributeConverter[PropertyType, String] {
     case PropertyType.INTEGER => "INTEGER"
     case _ => "STRING"
   }
+
   override def convertToEntityAttribute(dbData: String): PropertyType = dbData.toUpperCase match {
-    case  "JSON" => PropertyType.JSON
-    case  "ARRAY" => PropertyType.ARRAY
-    case  "DOUBLE" => PropertyType.DOUBLE
-    case  "INTEGER" => PropertyType.INTEGER
+    case "JSON" => PropertyType.JSON
+    case "ARRAY" => PropertyType.ARRAY
+    case "DOUBLE" => PropertyType.DOUBLE
+    case "INTEGER" => PropertyType.INTEGER
     case _ => PropertyType.STRING
   }
 }

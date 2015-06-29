@@ -13,7 +13,7 @@ import scala.beans.BeanProperty
  */
 
 @Entity
-class IncomeRange  extends Serializable{
+class IncomeRange extends Serializable {
 
   @Id
   @BeanProperty

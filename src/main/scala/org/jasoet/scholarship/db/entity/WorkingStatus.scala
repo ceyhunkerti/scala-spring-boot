@@ -13,7 +13,7 @@ import scala.beans.BeanProperty
  */
 
 @Entity
-class WorkingStatus(i: String, n: String, ne: String)  extends Serializable{
+class WorkingStatus(i: String, n: String, ne: String) extends Serializable {
 
   @Id
   @BeanProperty
