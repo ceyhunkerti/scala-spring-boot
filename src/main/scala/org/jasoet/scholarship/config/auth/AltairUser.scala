@@ -8,7 +8,7 @@ package org.jasoet.scholarship.config.auth
  * deny.prasetyo@gdplabs.id
  */
 
-trait AltairUser {
+trait AltairUser extends Serializable{
   def username: String
 
   def password: String
