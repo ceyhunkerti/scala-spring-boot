@@ -8,8 +8,9 @@ package org.jasoet.scholarship.config
  * deny.prasetyo@gdplabs.id
  */
 
-import org.jasoet.scholarship.config.auth.util.AltairPasswordEncoder
-import org.jasoet.scholarship.config.auth.{AltairUserDetails, AltairSecuritySupport, AltairUser}
+import org.jasoet.scholarship.config.auth.{AltairSecuritySupport, AltairUserDetails}
+import org.jasoet.scholarship.service.SecurityAuthService
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Configuration
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
@@ -21,6 +22,9 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 @EnableConfigurationProperties
 @EnableRedisHttpSession
 class WebSecurityConfig extends AltairSecuritySupport {
+
+  @Autowired
+  var securityAuthService: SecurityAuthService = _
 
   @throws(classOf[Exception])
   protected override def configure(http: HttpSecurity) {
@@ -40,16 +44,7 @@ class WebSecurityConfig extends AltairSecuritySupport {
 
 
   override def userResolver(uname: String): AltairUserDetails[_] = {
-    AltairUserDetails(
-      new AltairUser {
-        override def username: String = uname
-
-        override def name: String = "User"
-
-        override def password: String = AltairPasswordEncoder.encode("localhost")
-
-        override def email: String = "user@gdplabs.id"
-      }, Seq("SUPER_ADMIN"))
+    securityAuthService.fetchUser(uname)
   }
 }
 

@@ -25,23 +25,23 @@ class AltairUserDetails[A <: AltairUser](user: A, authorities: Seq[String]) exte
     }))
   }
 
-  override def isEnabled: Boolean = user.enabled
+  override def isEnabled: Boolean = user.isEnabled
 
-  override def getPassword: String = user.password
+  override def getPassword: String = user.getPassword
 
-  override def isAccountNonExpired: Boolean = user.accountNonExpired
+  override def isAccountNonExpired: Boolean = user.getAccountNonExpired
 
-  override def isCredentialsNonExpired: Boolean = user.credentialNonExpired
+  override def isCredentialsNonExpired: Boolean = user.getCredentialNonExpired
 
-  override def isAccountNonLocked: Boolean = user.accountNonLocked
+  override def isAccountNonLocked: Boolean = user.getAccountNonLocked
 
-  override def getUsername: String = user.username
+  override def getUsername: String = user.getUsername
 
   def roles = authorities
 
-  def email = user.email
+  def email = user.getEmail
 
-  def name = user.name
+  def name = user.getName
 
   def authObject: A = user
 
