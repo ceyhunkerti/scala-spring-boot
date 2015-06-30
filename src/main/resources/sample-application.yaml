@@ -38,8 +38,8 @@ security-util:
    role-prefix:
        SUPER_ADMIN: SADM-
        STUDENT : STUD-
-       PIC : PIC-
+       PIC : PICH-
        REGISTRANT : RGST-
-       FINANCIAL_STAFF : FIS-
-       FINANCIAL_MANAGER : FIM-
+       FINANCIAL_STAFF : FIST-
+       FINANCIAL_MANAGER : FIMG-
 
